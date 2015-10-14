@@ -1,13 +1,16 @@
 class Person
-  attr_accessor :name, :destination
+  attr_accessor :name, :age, :weight
+  attr_reader :start, :destination
 
-  def initialize(destination)
-    self.name = options[:Steve]
-    
+
+  def initialize(options={})
+    self.name = options[:name]
+    self.age = options[:age]
+    self.weight = options[:weight].to_f
     @destination = destination
   end
 
-  def Scramble
+  def to_s
     "To #{@destination}"
   end
 end
